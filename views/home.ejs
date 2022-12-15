@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/home.css" type="text/css" />
+    <script
+      src="https://kit.fontawesome.com/67b4a7f8da.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main">
+      <form action="/information" method="post">
+        <div class="title">TODO App</div>
+        <div class="description">
+          <p class="description-heading">Description</p>
+
+          <input
+            type="text"
+            placeholder="What do you need to do?"
+            name="description"
+            id="text"
+            required
+          />
+        </div>
+        <div class="category-date">
+          <div class="category">
+            <p class="description-heading">Category</p>
+            <label for="categories">
+              <select name="cat" id="category">
+                <option value="Choose" disabled selected>
+                  Choose your category
+                </option>
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="School">School</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="date">
+          <p class="description-heading">Due Date</p>
+          <input type="date" />
+        </div>
+        <div class="buttons">
+          <button type="submit" id="add-task">
+            <i class="fa-solid fa-plus"></i>&nbsp Add Task
+          </button>
+        </div>
+      </form>
+      <ul>
+        <% for(i of todo_list) { %>
+        <li>
+          <p><%= i.description %></p>
+          <p><%= i.category%></p>
+          <p><%= i.date%></p>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </body>
+</html>
