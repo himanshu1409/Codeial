@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="main">
-      <form action="/information" method="post">
+      <form action="/information" id="add" method="post">
         <div class="title">TODO App</div>
         <div class="description">
           <p class="description-heading">Description</p>
@@ -38,23 +38,38 @@
               </select>
             </label>
           </div>
-        </div>
-        <div class="date">
-          <p class="description-heading">Due Date</p>
-          <input type="date" />
+          <div class="date">
+            <p class="description-heading">Due Date</p>
+            <input type="date" name="date" />
+          </div>
         </div>
         <div class="buttons">
           <button type="submit" id="add-task">
             <i class="fa-solid fa-plus"></i>&nbsp Add Task
           </button>
+          <!-- <button type="" id="delete-task">
+              <i class="fa-solid fa-trash-can"></i>&nbsp Delete Task
+            </button> -->
         </div>
       </form>
       <ul>
         <% for(i of todo_list) { %>
         <li>
-          <p><%= i.description %></p>
-          <p><%= i.category%></p>
-          <p><%= i.date%></p>
+          <div class="task">
+            <div class="delete">
+              <a href="/delete-contact/?id=<%= i._id %>">
+                <i class="fa-solid fa-trash-can"></i>
+              </a>
+            </div>
+            <div class="task-desc-date">
+              <div class="task-desc"><%= i.description %></div>
+              <div class="task-date">
+                <i class="fa-regular fa-calendar-days"></i> &nbsp; <%=
+                JSON.stringify(i.date).slice(1,11) %>
+              </div>
+            </div>
+            <div class="task-cat <%= i.category%>"><%= i.category%></div>
+          </div>
         </li>
         <% } %>
       </ul>

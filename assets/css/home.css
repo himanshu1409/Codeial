@@ -92,3 +92,69 @@ button:hover,
 select:hover {
   cursor: pointer;
 }
+
+li {
+  list-style: none;
+  border-bottom: 1px solid gray;
+  padding: 10px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.task-cat {
+  display: flex;
+  align-items: center;
+  background-color: red;
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.task-desc {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(60, 57, 57);
+  margin-bottom: 3px;
+}
+
+.task-date {
+  color: rgb(60, 57, 57);
+}
+
+.task-date i {
+  color: rgb(60, 57, 57);
+}
+
+.task-desc-date {
+  position: absolute;
+  left: 100px;
+}
+
+.Personal {
+  background-color: blue;
+}
+
+.Work {
+  background-color: purple;
+}
+
+.School {
+  background-color: palevioletred;
+}
+
+.Cleaning {
+  background-color: green;
+}
+
+.delete i {
+  font-size: 25px;
+  color: red;
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+}
